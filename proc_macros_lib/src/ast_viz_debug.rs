@@ -4,10 +4,10 @@ use r3bl_rs_utils::{style_primary, style_prompt};
 use syn::{parse_str, ItemFn};
 
 pub fn fn_proc_macro_impl(_input: TokenStream) -> TokenStream {
-    let output_toiken_stream = "fn foo() -> u32 {42}";
-    let output = output_toiken_stream.parse().unwrap();
+    let output_token_stream = "fn foo() -> u32 {42}";
+    let output = output_token_stream.parse().unwrap();
 
-    let ast_item_fn: ItemFn = parse_str(output_toiken_stream).unwrap();
+    let ast_item_fn: ItemFn = parse_str(output_token_stream).unwrap();
     viz_ast(ast_item_fn);
 
     output
